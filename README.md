@@ -4,9 +4,23 @@ A **primary UX research case study in progress** evaluating the existing Cedarli
 
 **Moderated usability testing · User interviews · Survey questions · Task analysis · Research synthesis · Iterative redesign**
 
-> **Study status: setup complete — participant sessions have not yet been conducted.**
+[**Study overview**](https://joshuaokent-spec.github.io/Cedarline-Usability-Study-Redesign/) · [**Moderator guide**](study/moderator-guide.md) · [**Task scenarios**](study/task-scenarios.md)
+
+> **Study status: research kit complete — participant sessions pending.**
 >
-> No participant findings, quotes, metrics, or redesign conclusions are claimed in this repository until real sessions are completed.
+> No participant findings, quotes, metrics, or redesign conclusions are claimed until real sessions are completed.
+
+## At a glance
+
+| | |
+| --- | --- |
+| **Role** | UX Researcher / UX Designer |
+| **Prototype under test** | Cedarline Claim Reporting UX |
+| **Planned sample** | 5 adult convenience-sample participants |
+| **Methods** | Pre-task interview, moderated usability testing, post-task ease ratings, post-study survey, debrief interview |
+| **Core deliverable** | Evidence-supported redesign of Project 1 |
+| **Research tooling** | Local browser study runner + anonymized JSON export |
+| **Privacy** | Raw participant data and recordings are excluded from the public repo |
 
 ## Study question
 
@@ -18,24 +32,153 @@ The prototype under test is:
 
 ## Why this project exists
 
-The first five Cedarline projects demonstrate design and implementation breadth. This sixth project is intentionally different: it is built to produce **real primary research evidence**.
+Projects 1–5 demonstrate design and implementation breadth. Project 6 exists to produce something the others deliberately do not pretend to have:
 
-The study combines:
+**real primary research evidence.**
 
-- a brief pre-task interview;
-- moderated task-based usability testing;
-- post-task ease ratings;
-- a short post-study survey;
-- a debrief interview;
-- observation-based synthesis;
-- severity-ranked findings;
-- before/after redesign evidence.
+The study combines three methods in one lightweight session:
 
-## Planned sample
+### User interview
+A brief pre-task interview explores expectations, prior experience, potential stressors, and comfort with web forms. A debrief interview captures reasoning after the tasks.
 
-A small convenience sample of **5 adult participants** is planned for this rapid portfolio study.
+### Moderated usability test
+Participants complete five realistic claim-reporting tasks while behavior, assistance, uncertainty, backtracking, and task outcome are observed.
 
-Participants do **not** need insurance-industry expertise. Recruitment, sample limitations, and any relevant prior claim experience will be reported transparently.
+### Survey
+Each task receives a 1–7 ease rating. A short post-study survey captures perceived clarity, confidence, information load, and overall ease.
+
+## Planned participant experience
+
+```text
+Consent
+  → pre-task interview
+  → Task 1: choose policy / loss
+  → Task 2: handle unknown information
+  → Task 3: safety + defer evidence
+  → Task 4: contact preference + review
+  → Task 5: edit + submit
+  → post-study survey
+  → debrief interview
+```
+
+The complete scenarios are in [Task Scenarios](study/task-scenarios.md).
+
+## Local study runner
+
+The repository includes `study-runner.html`, a lightweight moderator tool designed for P01–P05 sessions.
+
+It records:
+
+- participant ID;
+- device;
+- prior claim experience;
+- web-form comfort;
+- consent status;
+- pre-task interview notes;
+- task outcome;
+- assistance level;
+- post-task ease rating;
+- observed behavior;
+- post-study survey ratings;
+- open responses;
+- moderator summary;
+- critical incidents.
+
+### Privacy behavior
+
+The runner:
+
+- stores the active draft in the local browser;
+- exports an anonymized JSON file on demand;
+- does not send participant data to a server;
+- uses participant IDs rather than names.
+
+The repository's `.gitignore` excludes folders intended for raw research data, recordings, and exports.
+
+## Outcome framework
+
+Each task is marked:
+
+- **Success**
+- **Success with assistance**
+- **Failure**
+
+Moderator assistance is recorded from:
+
+- **0 — none**
+- **1 — neutral prompt**
+- **2 — directional hint**
+- **3 — explicit instruction**
+
+Participants also provide a **1–7 ease rating** after each task.
+
+See [Metrics & Severity Rubric](study/metrics-and-severity.md).
+
+## Findings are intentionally blank
+
+The [Findings Template](study/findings-template.md) currently says:
+
+- Sessions completed: **0 / 5**
+- Findings synthesized: **No**
+- Redesign started: **No**
+
+That is intentional.
+
+A credible portfolio case study cannot contain research findings before research occurs.
+
+## Evidence chain
+
+After sessions, the work will follow:
+
+```text
+Raw observations
+  → anonymized session summaries
+  → pattern grouping
+  → severity-ranked findings
+  → redesign priorities
+  → Project 1 revisions
+  → before / after evidence
+  → limitations
+```
+
+See [Synthesis Plan](study/synthesis-plan.md).
+
+## Research materials
+
+- [Study Plan](study/study-plan.md)
+- [Recruitment Screener](study/recruitment-screener.md)
+- [Participant Consent Script](study/consent-script.md)
+- [Moderator Guide](study/moderator-guide.md)
+- [Task Scenarios](study/task-scenarios.md)
+- [Metrics & Severity Rubric](study/metrics-and-severity.md)
+- [Post-Study Survey](study/post-study-survey.md)
+- [Synthesis Plan](study/synthesis-plan.md)
+- [Findings Template](study/findings-template.md)
+- [Redesign Log Template](study/redesign-log-template.md)
+- [Limitations Checklist](study/limitations-checklist.md)
+
+## How we complete this project
+
+### 1. Recruit five participants
+A small convenience sample is sufficient for this formative portfolio exercise, as long as its limitations are reported accurately.
+
+### 2. Conduct the sessions
+Use the moderator guide and study runner. Avoid teaching participants how the interface works.
+
+### 3. Export each session
+Use anonymized IDs such as `P01`. Keep raw exports outside the public repository during analysis.
+
+### 4. Synthesize only after several sessions
+Do not redesign after every participant unless a critical defect makes continued testing impossible.
+
+### 5. Publish anonymized findings
+Replace the placeholders in the findings template with evidence-supported observations.
+
+### 6. Revise Project 1
+Every significant redesign should trace back to a finding.
+
+### 7. Document before / after
+Explain what changed, why it changed, tradeoffs, and what still needs validation.
 
 ## Research integrity
 
@@ -45,45 +188,28 @@ This repo intentionally separates:
 from  
 **findings that can only exist after real sessions.**
 
-Raw participant notes and recordings should not be committed to this public repository. The study runner uses participant IDs such as `P01` and saves/exports data locally in the browser.
+Do not claim:
 
-## Repository contents
-
-- study plan;
-- recruitment screener;
-- consent script;
-- moderator guide;
-- task scenarios;
-- observation template;
-- metrics and severity rubric;
-- post-study survey;
-- synthesis plan;
-- findings template;
-- redesign log template;
-- local study runner;
-- automated validation.
+- five participants before five participants are actually tested;
+- quotes that were not captured;
+- task-success percentages before sessions;
+- interview themes before synthesis;
+- a redesign as evidence-based before findings support it;
+- statistical generalizability from this small convenience sample.
 
 ## Cedarline portfolio
 
-| Project | Primary portfolio evidence |
+| Project | Primary evidence |
 | --- | --- |
-| Project 1 — Claim Reporting | Transactional UX |
-| Project 2 — Claims Operations | Enterprise UX |
-| Project 3 — Policy & Coverage IA | Information architecture |
-| Project 4 — Web Design System | Corporate web standards / design systems |
-| Project 5 — Catastrophe Response Hub | Visual design / crisis UX |
-| **Project 6 — Usability Study & Redesign** | **Primary research / usability testing / interviews / survey / iteration** |
+| [Project 1 — Claim Reporting](https://github.com/joshuaokent-spec/cedarline-claim-reporting-ux) | Transactional UX |
+| [Project 2 — Claims Operations](https://github.com/joshuaokent-spec/Cedarline-Claims-Operations-Dashboard) | Enterprise UX |
+| [Project 3 — Policy & Coverage IA](https://github.com/joshuaokent-spec/Cedarline-Policy-Coverage-IA) | Information architecture |
+| [Project 4 — Web Design System](https://github.com/joshuaokent-spec/Cedarline-Web-Design-System) | Corporate web standards / design systems |
+| [Project 5 — Catastrophe Response Hub](https://github.com/joshuaokent-spec/Cedarline-Catastrophe-Response-Hub) | Visual design / crisis UX |
+| **Project 6 — Usability Study & Redesign** | **Primary research / usability testing / interview / survey / iteration** |
 
-## What will make this project complete
+## Current status
 
-This case study is complete only after:
+The repository is **research-ready, not research-complete**.
 
-1. real participants are recruited and consented;
-2. sessions are conducted;
-3. anonymized observations are synthesized;
-4. findings are severity-ranked;
-5. Project 1 is revised based on evidence;
-6. the redesign is documented with before/after rationale;
-7. limitations are reported.
-
-Until then, this is a **research-ready study kit**, not a completed research case study.
+Once five real sessions are conducted and synthesized, this becomes the project that closes the biggest remaining UX requirement in the portfolio.
