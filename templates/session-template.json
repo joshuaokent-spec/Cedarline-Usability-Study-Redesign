@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "participantId": "P01",
+  "device": "",
+  "priorClaimExperience": "",
+  "webFormComfort": "",
+  "consent": false,
+  "preInterview": {
+    "experienceAndExpectations": "",
+    "stressors": ""
+  },
+  "tasks": [
+    {"id":"t1","outcome":"","assistanceLevel":"0","easeRating":"","notes":""},
+    {"id":"t2","outcome":"","assistanceLevel":"0","easeRating":"","notes":""},
+    {"id":"t3","outcome":"","assistanceLevel":"0","easeRating":"","notes":""},
+    {"id":"t4","outcome":"","assistanceLevel":"0","easeRating":"","notes":""},
+    {"id":"t5","outcome":"","assistanceLevel":"0","easeRating":"","notes":""}
+  ],
+  "postSurvey": [],
+  "openResponses": {
+    "mostConfusing": "",
+    "mostHelpful": "",
+    "changeOne": "",
+    "expectedButMissing": ""
+  },
+  "moderatorSummary": "",
+  "criticalIncidents": ""
+}
