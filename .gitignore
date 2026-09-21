@@ -1,0 +1,6 @@
+raw-research/
+exports/
+recordings/
+participant-data/
+*.session.json
+.DS_Store
