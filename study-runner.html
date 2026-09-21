@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Local anonymized usability session note runner">
+  <title>Cedarline Study Runner</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="study-runner.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#studyForm">Skip to study form</a>
+<header class="topbar">
+  <div><strong>Cedarline Research</strong><span>Local Study Runner</span></div>
+  <a href="index.html">Study overview</a>
+</header>
+
+<main class="runner-shell">
+  <header class="runner-header">
+    <p class="eyebrow">Moderator tool</p>
+    <h1>Session notes</h1>
+    <p class="privacy-note">Data stays in this browser until you export or clear it. Use participant IDs only. Do not enter names or real insurance, medical, or financial information.</p>
+  </header>
+
+  <form id="studyForm">
+    <section class="runner-card">
+      <h2>Session setup</h2>
+      <div class="form-grid">
+        <div class="field"><label for="participantId">Participant ID</label><select id="participantId" required><option value="">Select</option><option>P01</option><option>P02</option><option>P03</option><option>P04</option><option>P05</option></select></div>
+        <div class="field"><label for="device">Device</label><select id="device"><option>Desktop/laptop</option><option>Mobile phone</option><option>Tablet</option></select></div>
+        <div class="field"><label for="claimExperience">Previously filed a claim?</label><select id="claimExperience"><option>No</option><option>Yes</option><option>Prefer not to say</option></select></div>
+        <div class="field"><label for="formComfort">Web-form comfort (1–5)</label><select id="formComfort"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select></div>
+        <label class="consent full"><input id="consent" type="checkbox" required><span>Participant consented to the study and anonymized written observations. Recording consent, if applicable, is handled separately.</span></label>
+      </div>
+    </section>
+
+    <section class="runner-card">
+      <h2>Pre-task interview</h2>
+      <div class="form-grid">
+        <div class="field full"><label for="preClaim">Prior claim-reporting experience / expectations</label><textarea id="preClaim"></textarea></div>
+        <div class="field full"><label for="preStress">What might make an online claim stressful or difficult?</label><textarea id="preStress"></textarea></div>
+      </div>
+    </section>
+
+    <section class="runner-card">
+      <h2>Core tasks</h2>
+      <div id="tasks"></div>
+    </section>
+
+    <section class="runner-card">
+      <h2>Post-study survey</h2>
+      <p class="privacy-note">1 = strongly disagree · 7 = strongly agree</p>
+      <div id="survey"></div>
+      <div class="form-grid survey-open">
+        <div class="field full"><label for="confusing">Most confusing part</label><textarea id="confusing"></textarea></div>
+        <div class="field full"><label for="helpful">Most helpful or reassuring part</label><textarea id="helpful"></textarea></div>
+        <div class="field full"><label for="changeOne">One thing they would change</label><textarea id="changeOne"></textarea></div>
+        <div class="field full"><label for="missing">Expected but could not find</label><textarea id="missing"></textarea></div>
+      </div>
+    </section>
+
+    <section class="runner-card">
+      <h2>Debrief / moderator summary</h2>
+      <div class="field"><label for="moderatorSummary">Key observations — separate behavior from interpretation</label><textarea id="moderatorSummary"></textarea></div>
+      <div class="field field-gap"><label for="criticalIncidents">Critical incidents / assistance events</label><textarea id="criticalIncidents"></textarea></div>
+    </section>
+  </form>
+</main>
+
+<div class="runner-actions">
+  <span id="runnerStatus" role="status" aria-live="polite"></span>
+  <button class="secondary-action" id="saveLocal" type="button">Save locally</button>
+  <button class="primary-action" id="exportJson" type="button">Export anonymized JSON</button>
+  <button class="danger-action" id="clearSession" type="button">Clear session</button>
+</div>
+</body>
+</html>
